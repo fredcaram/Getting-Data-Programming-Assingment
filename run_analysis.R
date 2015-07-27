@@ -38,5 +38,7 @@ Run_Analisys <- function(dataSetPath)
   transformationSet <- melt(transformationSet, id=c("subject", "activity_id"))
   meanDataSet <- cast(transformationSet, subject~activity_id, mean)
   sdDataSet <- cast(transformationSet, subject~activity_id, sd)
+  
+  completeSet <- cbind(meanDataSet, sdDataSet)
 }
 
